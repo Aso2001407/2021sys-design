@@ -4,7 +4,7 @@
 
 if(体力<=20)then(true)
 :「宿屋に泊まる」と表示;
-elseif()then(false)
+else()then(false)
 :「頑張ってレベル上げる」と表示;
 endif
 
