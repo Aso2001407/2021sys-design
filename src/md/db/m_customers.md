@@ -2,7 +2,11 @@
 
 |属性名|型|PK|NN|FK|デフォルト|備考|
 |:---|:---|:---|:---|:---|:---|:---|
-|order_id|bigint(20)|○|○|||
-|customer_code|varchar(50)||○|||
-|purchase_date|date||○|||
-|total_price|int(11)||○|||
+|customer_code|varchar(50)|○|○||||
+|pass|varchar(50)||○||||
+|name|varchar(20)||○||||
+|address|varchar(100)||○||||
+|tel|varchar(20)||○||||
+|mail|varchar(100)||○||||
+|del_flag|int(1)||||null||
+|reg_date|date||○||||
