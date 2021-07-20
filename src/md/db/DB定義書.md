@@ -6,54 +6,54 @@
 
 # データベース詳細
 
-**購入テーブル**
+**購入テーブル（d_purchase）**
 
-|属性名|型|PK|NN|FK|デフォルト|備考|
-|:---|:---|:---|:---|:---|:---|:---|
-|order_id|bigint(20)|○|○||||
-|customer_code|varchar(50)||○||||
-|purchase_date|date||○||||
-|total_price|int(11)||○||||
+|和名|属性名（カラム名）|型|PK|NN|FK|デフォルト|備考|
+|:---|:---|:---|:---|:---|:---|:---|:---|
+|オーダーID|order_id|bigint(20)|○|○||||
+|顧客コード|customer_code|varchar(50)||○||||
+|購入日|purchase_date|date||○||||
+|総額|total_price|int(11)||○||||
 
-**購入テーブル詳細**
+**購入詳細テーブル(d_purchase_detai1）**
 
-|属性名|型|PK|NN|FK|デフォルト|備考|
-|:---|:---|:---|:---|:---|:---|:---|
-|detail_id|bigint(20)|○|○|||
-|order_id|bigint(20)|○|○||0|
-|item_code|int(11)||○|||
-|price|int(11)||○|||
-|num|int(11)||○|||
+|和名|属性名（カラム名）|型|PK|NN|FK|デフォルト|備考|
+|:---|:---|:---|:---|:---|:---|:---|:---|
+|オーダー詳細ID|detail_id|bigint(20)|○|○|||
+|オーダーID|order_id|bigint(20)|○|○||0|
+|商品コード|item_code|int(11)||○|||
+|価格|price|int(11)||○|||
+|数量|num|int(11)||○|||
 
-**カテゴリテーブル**
+**カテゴリマスタ（m_category）**
 
-|属性名|型|PK|NN|FK|デフォルト|備考|
-|:---|:---|:---|:---|:---|:---|:---|
-|category_id|int(11)|○|○|||
-|name|varchar(20)||○|||
-|reg_date|date||○|||
+|和名|属性名（カラム名）|型|PK|NN|FK|デフォルト|備考|
+|:---|:---|:---|:---|:---|:---|:---|:---|
+|カテゴリID|category_id|int(11)|○|○|||
+|カテゴリ名|name|varchar(20)||○|||
+|登録日|reg_date|date||○|||
 
-**ユーザー（顧客）テーブル**
+**顧客マスタ（m_customers）**
 
-|属性名|型|PK|NN|FK|デフォルト|備考|
-|:---|:---|:---|:---|:---|:---|:---|
-|customer_code|varchar(50)|○|○||||
-|pass|varchar(50)||○||||
-|name|varchar(20)||○||||
-|address|varchar(100)||○||||
-|tel|varchar(20)||○||||
-|mail|varchar(100)||○||||
-|del_flag|int(1)||||null||
-|reg_date|date||○||||
+|和名|属性名（カラム名）|型|PK|NN|FK|デフォルト|備考|
+|:---|:---|:---|:---|:---|:---|:---|:---|
+|顧客コード|customer_code|varchar(50)|○|○||||
+|パスワード|pass|varchar(50)||○||||
+|氏名|name|varchar(20)||○||||
+|住所|address|varchar(100)||○||||
+|電話番号|tel|varchar(20)||○||||
+|メールアドレス|mail|varchar(100)||○||||
+|削除フラグ|del_flag|int(1)||||null||
+|登録日|reg_date|date||○||||
 
-**商品テーブル**
+**商品マスタ（m_items）**
 
-|属性名|型|PK|NN|FK|デフォルト|備考|
-|:---|:---|:---|:---|:---|:---|:---|
-|item_code|int(11)|○|○||0||
-|item_name|varchar(50)||○|||
-|price|int(11)||○||||
-|category_id|int(11)||○|○||参照先 カテゴリテーブル(category_id)|
-|image|varchar(200)||○|||
-|detail|varchar(500)||||null|
-|reg_date|date||○|||
+|和名|属性名|型|PK|NN|FK|デフォルト|備考|
+|:---|:---|:---|:---|:---|:---|:---|:---|
+|商品コード|item_code|int(11)|○|○||0||
+|商品名|item_name|varchar(50)||○|||
+|価格|price|int(11)||○||||
+|カテゴリID|category_id|int(11)||○|○||参照先 カテゴリテーブル(category_id)|
+|画像ファイル名|image|varchar(200)||○|||
+|商品詳細説明|detail|varchar(500)||||null|
+|登録日|reg_date|date||○|||
